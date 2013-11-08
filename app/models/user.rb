@@ -11,6 +11,13 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, length: { minimum: 6 }
 
+  def send_password_reset
+    self.update_attribute(:password_reset_token, SecureRandom.urlsafe_base64) 
+    self.update_attribute(:password_reset_sent_at, Time.zone.now)
+    
+    UserMailer.password_reset(self).deliver
+  end
+
   def User.new_remember_token
   	SecureRandom.urlsafe_base64
   end
