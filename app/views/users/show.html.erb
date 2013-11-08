@@ -7,8 +7,18 @@
 				<%= @user.name %>
 			</h1>
 		</section>
+		<% if current_user?(@user) %>
+			<p><%= link_to "Create new student", new_student_path %></p>
+		<% end %>
+		
 	</aside>
 	<div class="span8">
-		
+		<% if @user.students.any? %>
+      		<h3>Students (<%= @user.students.count %>)</h3>
+      		<ol class="students">
+        		<%= render @students %>
+      		</ol>
+      		<%= will_paginate @students %>
+    	<% end %>
 	</div>
 </div>

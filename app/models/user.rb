@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   #attr_accessible :email, :name, :password, :password_confirmation
-  has_many :microposts, dependent: :destroy
+  has_many :students
   before_save { self.email = email.downcase }
   before_create :create_remember_token
 

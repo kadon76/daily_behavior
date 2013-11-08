@@ -10,8 +10,9 @@ FactoryGirl.define do
     end
   end
 
-  factory :micropost do
-  	content "Lorem ipsum"
+  factory :student do
+  	name "Sample Student"
+    student_id "1234567890"
   	user
   end
 end

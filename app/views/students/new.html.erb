@@ -1,0 +1,18 @@
+<% provide(:title, 'Creat new student') %>
+<h1>Create new student</h1>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@student) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+
+			<%= f.label :student_id, "Student ID" %>
+			<%= f.text_field :student_id %>
+
+			<%= f.submit "Create student", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>

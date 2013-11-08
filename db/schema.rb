@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131108180201) do
+ActiveRecord::Schema.define(version: 20131108204422) do
+
+  create_table "students", force: true do |t|
+    t.string   "name"
+    t.string   "student_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "students", ["student_id"], name: "index_students_on_student_id", unique: true
+  add_index "students", ["user_id"], name: "index_students_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

@@ -1,5 +1,6 @@
 DailyBehavior::Application.routes.draw do
   
+  resources :students
   resources :password_resets
   resources :users
   resources :sessions,   only: [:new, :create, :destroy]
@@ -13,6 +14,7 @@ DailyBehavior::Application.routes.draw do
 
   match 'signin',  to: 'sessions#new',         via: 'get'
   match 'signout', to: 'sessions#destroy',     via: 'delete'
+
 
  
 
