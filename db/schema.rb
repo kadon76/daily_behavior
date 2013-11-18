@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131108204422) do
+ActiveRecord::Schema.define(version: 20131114151841) do
+
+  create_table "behaviors", force: true do |t|
+    t.integer  "pos1"
+    t.integer  "neg1"
+    t.integer  "neg2"
+    t.integer  "cor1"
+    t.string   "pos1_name"
+    t.string   "neg1_name"
+    t.string   "neg2_name"
+    t.string   "cor1_name"
+    t.integer  "student_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "behaviors", ["student_id"], name: "index_behaviors_on_student_id"
 
   create_table "students", force: true do |t|
     t.string   "name"

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HandsOnTable Test</title>
+  <script src="../assets/javascript/jquery.min.js"></script>
+  <script src="../assets/javascript/jquery.handsontable.full.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="../assets/stylesheets/jquery.handsontable.full.css">
+</head>
+<body>
+<div><h1>Top of Page</h1></div>
+<div id="exampleGrid" class="handsontable"></div>
+<div><h2>Below the table</h2></div>
+<script type="text/javascript">
+var myData = [
+   ["", "Kia", "Nissan", "Toyota", "Honda"],
+   ["2008", 10, 11, 12, 13],
+   ["2009", 20, 11, 14, 13],
+   ["2010", 30, 15, 12, 13]
+   ];
+
+$("#exampleGrid").handsontable({
+   data: myData,
+   startRows: 5,
+   startCols: 5,
+   minSpareCols: 1,
+   //always keep at least 1 spare row at the right
+   minSpareRows: 1,
+   //always keep at least 1 spare row at the bottom,
+   rowHeaders: true,
+   colHeaders: true,
+   contextMenu: true
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+<table>
+	<tr>
+		<th>Time</th>
+		<th>Positive</th>
+		<th>Negative1</th>
+		<th>Negative2</th>
+		<th>Correction</th>
+		<th></th>
+	</tr>
+	<% for behavior in @behaviors %>
+	<tr>
+		<td><%= behavior.created_at.in_time_zone("Central Time (US & Canada)").to_s(:long) %></td>
+		<td><%= behavior.pos1 %></td>
+		<td><%= behavior.neg1 %></td>
+		<td><%= behavior.neg2 %></td>
+		<td><%= behavior.cor1 %></td>
+		<td><%= link_to "Edit", @behavior, :confirm => 'Are you sure?', :method => :create %></td>
+	</tr>
+	<% end %>
+</table>

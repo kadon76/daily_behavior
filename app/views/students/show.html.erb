@@ -1,0 +1,69 @@
+<% provide(:title, @student.name) %>
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h1 class="students">
+				<%= @student.name %>
+			</h1>
+			<h2 class="students">
+				<%= @student.student_id  %>
+			</h2>
+		</section>
+		<% if current_user?(@user) %>
+			<% current_student %>
+			<p><%= link_to "Record student behavior", new_behavior_path %></p>
+		<% end %>
+	</aside>
+	<div class="span8">
+		<% if @student.behaviors.any? %>
+      		<h3>Behaviors (<%= @student.behaviors.count %>)</h3>
+      		<table class="table table-stripped table-condensed">
+				<tr>
+					<th>Time</th>
+					<th>Positive</th>
+					<th>Negative1</th>
+					<th>Negative2</th>
+					<th>Correction</th>
+					<th></th>
+				</tr>
+				<% for behavior in @behaviors %>
+				<tr>
+					<td><%= behavior.created_at.in_time_zone("Central Time (US & Canada)").to_s(:long) %></td>
+					<td><%= behavior.pos1 %></td>
+					<td><%= behavior.neg1 %></td>
+					<td><%= behavior.neg2 %></td>
+					<td><%= behavior.cor1 %></td>
+					<td><%= link_to "Edit", @behavior, :confirm => 'Are you sure?', :method => :create %></td>
+				</tr>
+				<% end %>
+			</table>
+			<%= will_paginate @behaviors %>
+    	<% end %>
+		<!--
+		<div id="exampleGrid" class="handsontable"></div>
+			<script type="text/javascript">
+			var myData = [
+			   ["", "Kia", "Nissan", "Toyota", "Honda"],
+			   ["2008", 10, 11, 12, 13],
+			   ["2009", 20, 11, 14, 13],
+			   ["2010", 30, 15, 12, 13]
+			   ];
+
+			$("#exampleGrid").handsontable({
+			   data: myData,
+			   startRows: 5,
+			   startCols: 5,
+			   minSpareCols: 1,
+			   //always keep at least 1 spare row at the right
+			   minSpareRows: 1,
+			   //always keep at least 1 spare row at the bottom,
+			   rowHeaders: true,
+			   colHeaders: true,
+			   contextMenu: true
+			});
+
+			$("exampleGrid table").addClass("table table-striped");
+			</script>
+		-->
+	</div>
+</div>

@@ -1,0 +1,36 @@
+
+<li>
+	<h2><%= behavior.created_at.in_time_zone("Central Time (US & Canada)").to_s(:long) %></h2>
+	<span class="studentName"><%= behavior.pos1_name %></span>
+	<span class="studentId">
+		<% if behavior.pos1 %>
+			1
+		<% else %>	
+			0
+		<% end %>
+	</span>
+	<span class="studentName"><%= behavior.neg1_name %></span>
+	<span class="studentId">
+		<% if behavior.neg1 %>
+			1
+		<% else %>	
+			0
+		<% end %>
+	</span>
+	<span class="studentName"><%= behavior.neg2_name %></span>
+	<span class="studentId">
+		<% if behavior.neg2 %>
+			1
+		<% else %>	
+			0
+		<% end %>
+	</span>
+	<span class="studentName"><%= behavior.cor1_name %></span>
+	<span class="studentId">
+		<% if behavior.cor1 %>
+			1
+		<% else %>	
+			0
+		<% end %>
+	</span>
+</li>

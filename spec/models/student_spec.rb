@@ -5,6 +5,7 @@ describe Student do
 	let(:user) { FactoryGirl.create(:user) }
 	before { @student = user.students.build(name: "Sample Student", student_id: "1234567890") }
 
+
 	subject { @student }
 
 	it { should respond_to(:name) }
@@ -13,6 +14,8 @@ describe Student do
 	
 	it { should respond_to(:user) }
 	its(:user) { should eq user}
+
+  it { should respond_to(:behaviors) }
 
 	it { should be_valid }
 

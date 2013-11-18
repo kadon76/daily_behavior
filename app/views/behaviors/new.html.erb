@@ -1,0 +1,70 @@
+
+<div class="row">
+	<div class="span6 offset3">
+		<h1>Above Table</h1>
+		
+		<%= form_for (@behavior) do |f| %>
+			<div id="example3" class="handsontable"></div>
+		<%= f.hidden_field :neg1, value: 1 %>	
+		<p></p>
+			
+		<%= f.submit "Create behavior", class: "btn btn-large btn-primary" %>
+		<% end %>
+		<p><button id="save">Save</button></p>
+			<p></p>
+		<h2>Below Table</h2>
+
+
+		<script type="text/javascript">
+			var objectData = [
+			  {pos1: 1, neg1: 1, neg2: 1, cor1: 1},
+			  {pos1: 1, neg1: 0, neg2: 1, cor1: 1},
+			  {pos1: 1, neg1: 1, neg2: 0, cor1: 1},
+			  {pos1: 1, neg1: 1, neg2: 1, cor1: 0},
+			  {pos1: 1, neg1: 0, neg2: 0, cor1: 0},
+			];
+
+			var behaveData = [
+				{pos1: 1, neg1: 1, neg2: 1, cor1: 1},
+				{pos1: 1, neg1: 0, neg2: 1, cor1: 1},
+				{pos1: 1, neg1: 1, neg2: 0, cor1: 1},
+				{pos1: 1, neg1: 1, neg2: 1, cor1: 0},
+				{pos1: 1, neg1: 0, neg2: 0, cor1: 0}
+			];
+
+			var behaveData2 = {pos1: 1, neg1: 1, neg2: 1, cor1: 1};
+
+			var $container = $("#example3");
+			$container.handsontable({
+			  data: objectData,
+			  startRows: 6,
+			  startCols: 5,
+			  colHeaders: ['Positive', 'Negative1', 'Negative2', 'Correction'],
+			  rowHeaders: ['7:10-8:40', '8:40-10:10', '10:10-11:40', '11:40-1:10', '1:10-2:40'],
+			  minSpareRows: 0
+			 });
+
+			var currentTable = $container.data('handsontable');
+			var behaveData3 = currentTable.getData();
+
+
+			$( "button#save" ).on( "click", function() {
+				console.log('Button Clicked!')
+				$.ajax({
+					beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+					url: "/behaviors",
+					data: {"behaviors": behaveData3},
+					type: 'POST',
+					dataType: 'script',
+					success: function () {
+						console.log('Something posted!');
+					},
+					error: function () {
+						console.log('Some error');
+					}
+				})
+			});
+					
+			</script>
+	</div>
+</div>

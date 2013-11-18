@@ -1,5 +1,6 @@
 DailyBehavior::Application.routes.draw do
   
+  resources :behaviors
   resources :students
   resources :password_resets
   resources :users

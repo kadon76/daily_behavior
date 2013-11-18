@@ -48,4 +48,8 @@ module SessionsHelper
 		session[:return_to] = request.url if request.get?
 	end
 
+	def current_student
+		session[:this_student_id] = @student.id
+	end
+
 end

@@ -1,0 +1,18 @@
+<%= render 'shared/error_messages', object: f.object %>
+
+<%= f.label "Positive" %>
+<%= f.hidden_field :pos1_name, value: "Positive" %>
+<%= f.check_box :pos1, {}, "true", "false" %>
+
+<%= f.label "Negative1" %>
+<%= f.hidden_field :neg1_name, value: "Negative1" %>
+<%= f.check_box :neg1, {}, "true", "false" %>
+
+<%= f.label "Negative2" %>
+<%= f.hidden_field :neg2_name, value: "Negative2" %>
+<%= f.check_box :neg2, {}, "true", "false" %>
+
+<%= f.label "Correction" %>
+<%= f.hidden_field :cor1_name, value: "Correction" %>
+<%= f.check_box :cor1, {}, "true", "false" %>
+
