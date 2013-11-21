@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131114151841) do
+ActiveRecord::Schema.define(version: 20131120173517) do
 
   create_table "behaviors", force: true do |t|
     t.integer  "pos1"
@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 20131114151841) do
     t.integer  "student_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "record_time"
   end
 
+  add_index "behaviors", ["record_time"], name: "index_behaviors_on_record_time"
   add_index "behaviors", ["student_id"], name: "index_behaviors_on_student_id"
 
   create_table "students", force: true do |t|

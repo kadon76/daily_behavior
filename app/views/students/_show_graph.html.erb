@@ -1,0 +1,49 @@
+
+		<% if @student.behaviors.any? %>
+			<div id="mychart"></div>
+			<p></p>
+			<%= image_tag(Gchart.bar(:data => @thisWeeksBehaviors,
+									:theme => :thirty7signals,
+									:max_value => @thisWeeksTotal,
+									:bar_colors => ['ffaa00'],
+									:bar_width_and_spacing => [30,25],
+									
+									:axis_with_labels => ['x,y'],
+									:axis_labels => ['Positive|Negative1|Negative2|Correction'],
+									
+									:title => "Behaviors",
+									:size => '600x400'
+
+									)) %>
+		<% end %>
+		<script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+    <script type="text/javascript">
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+      	 // Create the data table.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Behavior');
+      data.addColumn('number', 'Number');
+      data.addRows([
+        ['Positive', <%= @thisWeeksBehaviors[0] %>],
+        ['Negative1', <%= @thisWeeksBehaviors[1] %>],
+        ['Negative2', <%= @thisWeeksBehaviors[2] %>], 
+        ['Correction', <%= @thisWeeksBehaviors[3] %>],
+      ]);
+
+      // Set chart options
+      var options = {'title':'Behaviors',
+      				 'legend': 'none',
+      				 'vAxis': { maxValue:  <%= @thisWeeksTotal %>, gridlines: { color: '#333', count: -1 } },
+                     'width':400,
+                     'height':300};
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.ColumnChart(document.getElementById('mychart'));
+      chart.draw(data, options);
+    }
+    </script>
+		

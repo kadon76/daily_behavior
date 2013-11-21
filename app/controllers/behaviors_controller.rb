@@ -3,6 +3,7 @@ class BehaviorsController < ApplicationController
     @student = Student.find_by(id: session[:this_student_id])
   	@behavior = Behavior.new(pos1_name: "Positive", neg1_name: "Negative1", 
                             neg2_name: "Negative2", cor1_name: "Correction")
+    @today = Time.now
   end
 
   def create
@@ -27,17 +28,44 @@ class BehaviorsController < ApplicationController
   end
 
   def destroy
-  end
+      @student = Student.find_by(id: session[:this_student_id])
+      @behavior = @student.behaviors.find(params[:id])
+      if @behavior.destroy
+        flash[:success] = "Behavior deleted."
+        redirect_to @student
+      else
+        flash![:error] = "Behavior NOT deleted."
+      end
+      
+    end
 
   def index
   end
 
   def edit
-    
+    @behavior = Behavior.find(params[:id])
+  end
+
+  def show
+    @behavior = Behavior.find(params[:id])
+  end
+
+  def update
+    @student = Student.find_by(id: session[:this_student_id])
+    @behavior = Behavior.find(params[:id])
+    if @behavior.update_attributes(behavior_params)
+      # Handle a successfuol update.
+      flash[:success] = "Behavior updated"
+      redirect_to @student
+    else
+      flash![:error] = "Something went wrong!"
+      render 'edit'
+    end
   end
 
   private
     def behavior_params
-      params.require(:behavior).permit(:pos1, :neg1, :neg2, :cor1)
+      params.require(:behavior).permit(:pos1, :neg1, :neg2, :cor1, 
+                    :pos1_name, :neg1_name, :neg2_name, :cor1_name, :record_time)
     end
 end

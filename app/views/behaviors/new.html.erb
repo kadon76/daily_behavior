@@ -3,25 +3,25 @@
 	<div class="span6 offset3">
 		<h1>Above Table</h1>
 		
-		<%= form_for (@behavior) do |f| %>
+		
 			<div id="example3" class="handsontable"></div>
-		<%= f.hidden_field :neg1, value: 1 %>	
+		
 		<p></p>
 			
-		<%= f.submit "Create behavior", class: "btn btn-large btn-primary" %>
-		<% end %>
-		<p><button id="save">Save</button></p>
+		
+		<p><button type="button" id="save" class="btn btn-large btn-primary">Save</button></p>
 			<p></p>
 		<h2>Below Table</h2>
 
 
 		<script type="text/javascript">
+
 			var objectData = [
-			  {pos1: 1, neg1: 1, neg2: 1, cor1: 1},
-			  {pos1: 1, neg1: 0, neg2: 1, cor1: 1},
-			  {pos1: 1, neg1: 1, neg2: 0, cor1: 1},
-			  {pos1: 1, neg1: 1, neg2: 1, cor1: 0},
-			  {pos1: 1, neg1: 0, neg2: 0, cor1: 0},
+			  {pos1: 1, neg1: 1, neg2: 1, cor1: 1, record_time: "<%= @today.change(day: 13, hour: 8) %>"},
+			  {pos1: 1, neg1: 0, neg2: 1, cor1: 1, record_time: "<%= @today.change(day: 13, hour: 9) %>"},
+			  {pos1: 1, neg1: 1, neg2: 0, cor1: 1, record_time: "<%= @today.change(day: 13, hour: 11) %>"},
+			  {pos1: 1, neg1: 1, neg2: 1, cor1: 0, record_time: "<%= @today.change(day: 13, hour: 12) %>"},
+			  {pos1: 1, neg1: 0, neg2: 0, cor1: 0, record_time: "<%= @today.change(day: 13, hour: 14) %>"},
 			];
 
 			var behaveData = [
@@ -39,9 +39,15 @@
 			  data: objectData,
 			  startRows: 6,
 			  startCols: 5,
-			  colHeaders: ['Positive', 'Negative1', 'Negative2', 'Correction'],
+			 
+			  
 			  rowHeaders: ['7:10-8:40', '8:40-10:10', '10:10-11:40', '11:40-1:10', '1:10-2:40'],
-			  minSpareRows: 0
+			  minSpareRows: 0,
+			  columns: [
+			  	{data: 'pos1'},{data: 'neg1'},{data: 'neg2'},{data: 'cor1'},
+			  	{readOnly: true}
+			  ],
+			  colHeaders: ['Positive', 'Negative1', 'Negative2', 'Correction', 'Extra']
 			 });
 
 			var currentTable = $container.data('handsontable');

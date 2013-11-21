@@ -1,0 +1,36 @@
+<% provide(:title, @student.name) %>
+<% require 'gchart' %>
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h1 class="students">
+				<%= @student.name %>
+			</h1>
+			<h2 class="students">
+				<%= @student.student_id  %>
+			</h2>
+		</section>
+		<% if current_user?(@user) %>
+			<% current_student %>
+			<p><%= link_to "Record student behavior", new_behavior_path %></p>
+		<% end %>
+	</aside>
+	<div class="span8">
+		<% if @student.behaviors.any? %>
+			<%= image_tag(Gchart.bar(:data => @thisWeeksBehaviors,
+									:theme => :thirty7signals,
+									:max_value => @thisWeeksTotal,
+									
+									:bar_width_and_spacing => [30,25],
+									
+									:axis_with_labels => ['x,y'],
+									:axis_labels => ['Positive|Negative1|Negative2|Correction'],
+									
+									:title => "Behaviors",
+									:size => '600x400'
+
+									)) %>
+		<% end %>
+		
+	</div>
+</div>

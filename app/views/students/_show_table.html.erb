@@ -1,0 +1,37 @@
+
+		<% if @student.behaviors.any? %>
+      		<h3>Behaviors (<%= @student.behaviors.count %>)</h3>
+      		<table class="table table-stripped table-condensed">
+				<tr>
+					<th>Time</th>
+					<th>Positive</th>
+					<th>Negative1</th>
+					<th>Negative2</th>
+					<th>Correction</th>
+					<th></th>
+					<th></th>
+				</tr>
+				<tr>
+					<td></td>
+					<td><%= @thisWeeksBehaviors[0] %></td>
+					<td><%= @thisWeeksBehaviors[1] %></td>
+					<td><%= @thisWeeksBehaviors[2] %></td>
+					<td><%= @thisWeeksBehaviors[3] %></td>
+					<td><%= @thisWeeksTotal %></td>
+					<td></td>
+				</tr>
+				<% for behavior in @behaviors %>
+				<tr>
+					<td><%= behavior.record_time.to_s(:long) %></td>
+					<td><%= behavior.pos1 %></td>
+					<td><%= behavior.neg1 %></td>
+					<td><%= behavior.neg2 %></td>
+					<td><%= behavior.cor1 %></td>
+					<td><%= link_to "Delete", behavior, method: :delete, data: { confirm: "You sure?" } %></td>
+					<td><%= link_to "Edit", edit_behavior_path(behavior) %></td>
+				</tr>
+				<% end %>
+			</table>
+			<%= will_paginate @behaviors %>
+    	<% end %>
+		
