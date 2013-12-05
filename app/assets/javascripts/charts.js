@@ -1,7 +1,7 @@
 jQuery(function ($) {
   // Load Google visualization library if a chart element exists
   if ($('[data-chart]').length > 0) {
-    $.getScript('https://www.google.com/jsapi', function (data, textStatus) {
+    $.getScript('//www.google.com/jsapi', function (data, textStatus) {
       google.load('visualization', '1.0', { 'packages': ['corechart'], 'callback': function () {
         // Google visualization library loaded
         $('[data-chart]').each(function () {
