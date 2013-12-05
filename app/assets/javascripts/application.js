@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.min
 //= require jquery.handsontable.full
+//= require charts.js
 //= require bootstrap
 //= require turbolinks
 //= require_tree .

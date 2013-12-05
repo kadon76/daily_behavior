@@ -11,25 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131120173517) do
+ActiveRecord::Schema.define(version: 20131203214129) do
 
   create_table "behaviors", force: true do |t|
     t.integer  "pos1"
     t.integer  "neg1"
     t.integer  "neg2"
     t.integer  "cor1"
-    t.string   "pos1_name"
-    t.string   "neg1_name"
-    t.string   "neg2_name"
-    t.string   "cor1_name"
     t.integer  "student_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "record_time"
+    t.integer  "pos2"
+    t.integer  "pos3"
+    t.integer  "pos4"
+    t.integer  "neg3"
+    t.integer  "neg4"
+    t.integer  "neg5"
+    t.integer  "neg6"
+    t.integer  "neg7"
+    t.integer  "neg8"
+    t.integer  "neg9"
+    t.integer  "neg10"
+    t.integer  "neg11"
+    t.integer  "neg12"
+    t.integer  "neg13"
+    t.integer  "neg14"
+    t.integer  "neg15"
+    t.integer  "neg16"
+    t.integer  "cor2"
+    t.integer  "cor3"
+    t.integer  "cor4"
   end
 
   add_index "behaviors", ["record_time"], name: "index_behaviors_on_record_time"
   add_index "behaviors", ["student_id"], name: "index_behaviors_on_student_id"
+
+  create_table "prospects", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "prospects", ["email"], name: "index_prospects_on_email", unique: true
 
   create_table "students", force: true do |t|
     t.string   "name"

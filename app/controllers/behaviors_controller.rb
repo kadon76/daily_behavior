@@ -1,8 +1,7 @@
 class BehaviorsController < ApplicationController
   def new
     @student = Student.find_by(id: session[:this_student_id])
-  	@behavior = Behavior.new(pos1_name: "Positive", neg1_name: "Negative1", 
-                            neg2_name: "Negative2", cor1_name: "Correction")
+  	@behavior = Behavior.new
     @today = Time.now
   end
 
@@ -65,7 +64,8 @@ class BehaviorsController < ApplicationController
 
   private
     def behavior_params
-      params.require(:behavior).permit(:pos1, :neg1, :neg2, :cor1, 
-                    :pos1_name, :neg1_name, :neg2_name, :cor1_name, :record_time)
+      params.require(:behavior).permit(:pos1, :pos2, :pos3, :pos4, :neg1, :neg2, :neg3, :neg4, 
+                :neg5, :neg6, :neg7, :neg8, :neg9, :neg10, :neg11, :neg12, 
+                :neg13, :neg14, :neg15, :neg16, :cor1, :cor2, :cor3, :cor4, :record_time)
     end
 end

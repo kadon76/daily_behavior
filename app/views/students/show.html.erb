@@ -1,6 +1,6 @@
 <% provide(:title, @student.name) %>
 <div class="row">
-	<aside class="span4">
+	<aside class="span3">
 		<section>
 			<h1 class="students">
 				<%= @student.name %>
@@ -13,35 +13,12 @@
 			<% current_student %>
 			<p><%= link_to "Record student behavior", new_behavior_path %></p>
 		<% end %>
+		<section>
+			
+		</section>
 	</aside>
-	<div class="span8">
-		<%= render 'show_graph' %>
+	<div id="show_div" class="span9">
+		<%= render "show_graph" %>
 		
-		<!--
-		<div id="exampleGrid" class="handsontable"></div>
-			<script type="text/javascript">
-			var myData = [
-			   ["", "Kia", "Nissan", "Toyota", "Honda"],
-			   ["2008", 10, 11, 12, 13],
-			   ["2009", 20, 11, 14, 13],
-			   ["2010", 30, 15, 12, 13]
-			   ];
-
-			$("#exampleGrid").handsontable({
-			   data: myData,
-			   startRows: 5,
-			   startCols: 5,
-			   minSpareCols: 1,
-			   //always keep at least 1 spare row at the right
-			   minSpareRows: 1,
-			   //always keep at least 1 spare row at the bottom,
-			   rowHeaders: true,
-			   colHeaders: true,
-			   contextMenu: true
-			});
-
-			$("exampleGrid table").addClass("table table-striped");
-			</script>
-		-->
 	</div>
 </div>
