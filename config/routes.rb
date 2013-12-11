@@ -2,7 +2,14 @@ DailyBehavior::Application.routes.draw do
   
   resources :student_data
   resources :prospects
-  resources :behaviors
+  resources :behaviors do
+    collection do
+      get 'new_single_today'
+      get 'new_whole_day'
+      get 'new_single_choose'
+    end
+  end
+
   resources :students do
     member do
       get 'show_table'

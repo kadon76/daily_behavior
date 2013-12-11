@@ -17,8 +17,20 @@
 			
 		</section>
 	</aside>
-	<div id="show_div" class="span9">
-		<%= render "show_graph" %>
+	<div class="span9">
+		<ul class="nav nav-tabs">
+			<li class="active" id="studentShowTab1">
+				<%= link_to "This Week's Graph", show_graph_student_path, remote: true %>
+			</li>
+			<li id="studentShowTab2">
+				<%= link_to "This Week's Table", show_table_student_path, remote: true %>
+
+			</li>
+		</ul>
+		<div id="studentShowContent">
+			<%= render "show_graph" %>
+		</div>
+		
 		
 	</div>
 </div>

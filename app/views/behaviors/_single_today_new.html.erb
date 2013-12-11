@@ -1,13 +1,9 @@
-<% provide(:title, "Edit behavior") %>
-<h1>Update this behavior</h1>
 
 <div class="row">
 	<div class="span6 offset3">
 		<%= form_for(@behavior, html: {class: "form-horizontal", role: "form"}) do |f| %>
-			<%= render 'edit_fields', f: f %>
+			<%= render 'today_fields', f: f %>
 			<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
 		<% end %>
-
-		
 	</div>
 </div>

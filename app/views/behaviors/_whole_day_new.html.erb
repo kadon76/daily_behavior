@@ -1,0 +1,325 @@
+
+<div class="row">
+	<aside class="span3">
+		<section>
+			
+		</section>
+		<section>
+			<table class="table-bordered">
+				<tr class="positive">
+					<td>A</td>
+					<td>On Task</td>
+				</tr>
+				<tr class="positive">
+					<td>B</td>
+					<td>Positive Interaction</td>
+				</tr>
+				<tr class="positive">
+					<td>C</td>
+					<td>Safety</td>
+				</tr>
+				<tr class="positive">
+					<td>D</td>
+					<td>B.I.P. Goal</td>
+				</tr>
+				<tr class="negative">
+					<td>E</td>
+					<td>Defiant</td>
+				</tr>
+				<tr class="negative">
+					<td>F</td>
+					<td>Disrespectful</td>
+				</tr>
+				<tr class="negative">
+					<td>G</td>
+					<td>Disruptive</td>
+				</tr>
+				<tr class="negative">
+					<td>H</td>
+					<td>Property Distruction</td>
+				</tr>
+				<tr class="negative">
+					<td>I</td>
+					<td>Threatening</td>
+				</tr>
+				<tr class="negative">
+					<td>J</td>
+					<td>Obsenity</td>
+				</tr>
+				<tr class="negative">
+					<td>K</td>
+					<td>Physical Aggression</td>
+				</tr>
+				<tr class="negative">
+					<td>L</td>
+					<td>Verbal Aggression</td>
+				</tr>
+				<tr class="negative">
+					<td>M</td>
+					<td>AWOL</td>
+				</tr>
+				<tr class="negative">
+					<td>N</td>
+					<td>Sleeping</td>
+				</tr>
+				<tr class="negative">
+					<td>O</td>
+					<td>Provoking/Mocking</td>
+				</tr>
+				<tr class="negative">
+					<td>P</td>
+					<td>Self-Injurious</td>
+				</tr>
+				<tr class="negative">
+					<td>Q</td>
+					<td>Repeat Offense</td>
+				</tr>
+				<tr class="negative">
+					<td>R</td>
+					<td>B.I.P. Goal</td>
+				</tr>
+				<tr class="negative">
+					<td>S</td>
+					<td>Tardy</td>
+				</tr>
+				<tr class="negative">
+					<td>T</td>
+					<td>Other</td>
+				</tr>
+				<tr class="correction">
+					<td>U</td>
+					<td>Time Away</td>
+				</tr>
+				<tr class="correction">
+					<td>V</td>
+					<td>Time Out</td>
+				</tr>
+				<tr class="correction">
+					<td>W</td>
+					<td>Seclusion</td>
+				</tr>
+				<tr class="correction">
+					<td>X</td>
+					<td>Restraint</td>
+				</tr>
+			</table>
+		</section>
+	</aside>
+	<div class="span9">
+		
+		
+		
+			<div id="example3" class="handsontable"></div>
+		
+		<p></p>
+			
+		
+		<p><button type="button" id="save" class="btn btn-large btn-primary">Save</button></p>
+			<p></p>
+		
+
+
+		<script type="text/javascript">
+
+			var objectData = [
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 8) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 8, min: 20) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 8, min: 40) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 9) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 9, min: 20) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 9, min: 40) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 10) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 10, min: 20) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 10, min: 40) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 11) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 11, min:20) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 11, min: 40) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 12) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 12, min: 20) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 12, min: 40) %>"},
+			  	{pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 13) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 13, min: 20) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 13, min: 40) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 14) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 14, min: 20) %>"},
+			  	 {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 14, min: 40) %>"},
+			  {pos1: 1, pos2: 1, pos3: 1, pos4: 1, 
+			  	neg1: 0, neg2: 0, neg3: 0, neg4: 0, neg5: 0, neg6: 0, neg7: 0, neg8: 0,
+			  	neg9: 0, neg10: 0, neg11: 0, neg12: 0, neg13: 0, neg14: 0, neg15: 0, neg16: 0,
+			  	cor1: 0, cor2: 0, cor3: 0, cor4: 0, 
+			  	record_time: "<%= @today.change(hour: 15) %>"}		
+			];
+
+			var behaveData = [
+				{pos1: 1, neg1: 1, neg2: 1, cor1: 1},
+				{pos1: 1, neg1: 0, neg2: 1, cor1: 1},
+				{pos1: 1, neg1: 1, neg2: 0, cor1: 1},
+				{pos1: 1, neg1: 1, neg2: 1, cor1: 0},
+				{pos1: 1, neg1: 0, neg2: 0, cor1: 0}
+			];
+
+			var behaveData2 = {pos1: 1, neg1: 1, neg2: 1, cor1: 1};
+
+			var purpleRenderer = function (instance, td, row, col, prop, value, cellProperties) {
+  				Handsontable.TextCell.renderer.apply(this, arguments);
+  				$(td).css({background: 'purple'});
+  				$(td).css({color: 'white'});
+			};
+
+			var blueRenderer = function (instance, td, row, col, prop, value, cellProperties) {
+  				Handsontable.TextCell.renderer.apply(this, arguments);
+  				$(td).css({background: 'blue'});
+    			$(td).css({color: 'white'});
+			};
+
+			var greenRenderer = function (instance, td, row, col, prop, value, cellProperties) {
+  				Handsontable.TextCell.renderer.apply(this, arguments);
+  				$(td).css({background: 'green'});
+  				$(td).css({color: 'white'});
+			};
+
+			var $container = $("#example3");
+			$container.handsontable({
+			  data: objectData,
+			  startRows: 22,
+			  startCols: 24,
+			  colWidths: 25,			 
+			  minSpareCols: 0,
+			  rowHeaders: ['7:50-8:10', '8:10-8:30', '8:30-8:50', '8:50-9:10', '9:10-9:30',
+			  				'9:30-9:50', '9:50-10:10', '10:10-10:30', '10:30-10:50', '10:50-11:10',
+			  				'11:10-11:30', '11:30-11:50', '11:50-12:10', '12:10-12:30', '12:30-12:50',
+			  				'12:50-1:10', '1:10-1:30', '1:30-1:50', '1:50-2:10', '2:10-2:30',
+			  				'2:30-2:50', '2:50-3:10'],
+			  minSpareRows: 0,
+			  columns: [
+			  	{data: 'pos1', renderer: purpleRenderer},{data: 'pos2', renderer: purpleRenderer},
+			  	{data: 'pos3', renderer: purpleRenderer},{data: 'pos4', renderer: purpleRenderer},
+			  	{data: 'neg1', renderer: blueRenderer},{data: 'neg2', renderer: blueRenderer},
+			  	{data: 'neg3', renderer: blueRenderer},{data: 'neg4', renderer: blueRenderer},
+			  	{data: 'neg5', renderer: blueRenderer},{data: 'neg6', renderer: blueRenderer},
+			  	{data: 'neg7', renderer: blueRenderer},{data: 'neg8', renderer: blueRenderer},
+			  	{data: 'neg9', renderer: blueRenderer},{data: 'neg10', renderer: blueRenderer},
+			  	{data: 'neg11', renderer: blueRenderer},{data: 'neg12', renderer: blueRenderer},
+			  	{data: 'neg13', renderer: blueRenderer},{data: 'neg14', renderer: blueRenderer},
+			  	{data: 'neg15', renderer: blueRenderer},{data: 'neg16', renderer: blueRenderer},
+			  	{data: 'cor1', renderer: greenRenderer},{data: 'cor2', renderer: greenRenderer},
+			  	{data: 'cor3', renderer: greenRenderer},{data: 'cor4', renderer: greenRenderer}
+			  	
+			  ],
+			  colHeaders: ['On Task', 'Positive Interactions', 'Safety', 'B.I.P. Goal', 
+			  				'Defiant', 'Disrespectful', 'Disruptive', 'Property Distruction',
+			  				'Threatening', 'Obsenity', 'Physical Aggression', 'Verbal Aggression',
+			  				'AWOL', 'Sleeping', 'Provoking/Mocking', 'Self-Injurious',
+			  				'Repeat Offense', 'B.I.P Goal', 'Tardy', 'Other',
+			  				'Time Away', 'Time Out', 'Seclusion', 'Restraint',
+			  				'Extra']
+			 });
+
+			var currentTable = $container.data('handsontable');
+			var behaveData3 = currentTable.getData();
+
+
+			$( "button#save" ).on( "click", function() {
+				console.log('Button Clicked!')
+				$.ajax({
+					beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+					url: "/behaviors",
+					data: {"behaviors": behaveData3},
+					type: 'POST',
+					dataType: 'script',
+					success: function () {
+						console.log('Something posted!');
+					},
+					error: function () {
+						console.log('Some error');
+					}
+				})
+			});
+					
+			</script>
+	</div>
+</div>

@@ -1,0 +1,107 @@
+<%= render 'shared/error_messages', object: f.object %>
+
+<div class="control-group">
+	<%= f.label :pos1, "On Task", :class =>  "control-label"  %>
+	<div class="controls">
+		<%= f.select(:pos1, options_for_select([['0', 0], ['1', 1]], @behavior.pos1))  %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label :pos2, "Positive Interactions", :class => "control-label" %>
+	<div class="controls">
+		<%= f.select(:pos2, options_for_select([['0', 0], ['1', 1]], @behavior.pos2))  %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label :pos3, "Safety", :class => "control-label" %>
+	<%= f.select(:pos3, options_for_select([['0', 0], ['1', 1]], @behavior.pos3))  %>
+</div>
+<div class="control-group">
+	<%= f.label :pos4, "B.I.P. Goal" %>
+	<%= f.select(:pos4, options_for_select([['0', 0], ['1', 1]], @behavior.pos4))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg1, "Defiant" %>
+	<%= f.select(:neg1, options_for_select([['0', 0], ['1', 1]], @behavior.neg1))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg2, "Disrespectful" %>
+	<%= f.select(:neg2, options_for_select([['0', 0], ['1', 1]], @behavior.neg2))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg3, "Disruptive" %>
+	<%= f.select(:neg3, options_for_select([['0', 0], ['1', 1]], @behavior.neg3))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg4, "Property Distruction" %>
+	<%= f.select(:neg4, options_for_select([['0', 0], ['1', 1]], @behavior.neg4))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg5, "Threatening" %>
+	<%= f.select(:neg5, options_for_select([['0', 0], ['1', 1]], @behavior.neg5))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg6, "Obsenity" %>
+	<%= f.select(:neg6, options_for_select([['0', 0], ['1', 1]], @behavior.neg6))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg7, "Physical Aggression" %>
+	<%= f.select(:neg7, options_for_select([['0', 0], ['1', 1]], @behavior.neg7))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg8, "Verbal Aggression" %>
+	<%= f.select(:neg8, options_for_select([['0', 0], ['1', 1]], @behavior.neg8))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg9, "AWOL" %>
+	<%= f.select(:neg9, options_for_select([['0', 0], ['1', 1]], @behavior.neg9))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg10, "Sleeping" %>
+	<%= f.select(:neg10, options_for_select([['0', 0], ['1', 1]], @behavior.neg10))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg11, "Provoking/Mocking" %>
+	<%= f.select(:neg11, options_for_select([['0', 0], ['1', 1]], @behavior.neg11))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg12, "Self-Injurious" %>
+	<%= f.select(:neg12, options_for_select([['0', 0], ['1', 1]], @behavior.neg12))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg13, "Repeat Offense" %>
+	<%= f.select(:neg13, options_for_select([['0', 0], ['1', 1]], @behavior.neg13))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg14, "B.I.P. Goal" %>
+	<%= f.select(:neg14, options_for_select([['0', 0], ['1', 1]], @behavior.neg14))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg15, "Tardy" %>
+	<%= f.select(:neg15, options_for_select([['0', 0], ['1', 1]], @behavior.neg15))  %>
+</div>
+<div class="control-group">
+	<%= f.label :neg16, "Other" %>
+	<%= f.select(:neg16, options_for_select([['0', 0], ['1', 1]], @behavior.neg16))  %>
+</div>
+<div class="control-group">
+	<%= f.label :cor1, "Time Away" %>
+	<%= f.select(:cor1, options_for_select([['0', 0], ['1', 1]], @behavior.cor1))  %>
+</div>
+<div class="control-group">
+	<%= f.label :cor2, "Time Out" %>
+	<%= f.select(:cor2, options_for_select([['0', 0], ['1', 1]], @behavior.cor2)) %>
+</div>
+<div class="control-group">
+	<%= f.label :cor3, "Seclusion" %>
+	<%= f.select(:cor3, options_for_select([['0', 0], ['1', 1]], @behavior.cor3))  %>
+</div>
+<div class="control-group">
+	<%= f.label :cor4, "Restraint" %>
+	<%= f.select(:cor4, options_for_select([['0', 0], ['1', 1]], @behavior.cor4))  %>
+</div>
+<div class="control-group">
+	<%= f.label :record_time, "Behavior Record Time" %>
+	<%= f.datetime_select :record_time, { ampm: true, default: @behavior.record_time, discard_year: true }%>
+</div>
+

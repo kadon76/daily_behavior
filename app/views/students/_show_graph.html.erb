@@ -1,4 +1,4 @@
-
+<%= javascript_include_tag 'charts' %>
 		<% if @student.behaviors.any? %>
 			<%= chart_tag('student_graph', 600, { :theseBehaviors => @thisWeeksBehaviors, :thisTotal => @thisWeeksTotal }) %>
 			<p></p>

@@ -1,2 +1,4 @@
-console.log('In the javascript!')
-$('#show_div').html("<%= escape_javascript(render 'show_table') %>");
+$("#studentShowTab1").removeClass("active");
+$("#studentShowTab2").addClass("active");
+$("#studentShowContent").html("<%= escape_javascript(render('show_table')) %>");
+$('.pagination a').attr('data-remote', 'true');

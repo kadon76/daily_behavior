@@ -7,12 +7,22 @@ class BehaviorsController < ApplicationController
 
   def create
     @student = Student.find_by(id: session[:this_student_id])
-    @behaviors = params[:behaviors].values
-    @behaviors.each do |behavior_params|
-      @behavior = @student.behaviors.create(behavior_params)
+    respond_to do |format|
+      format.js {
+        @behaviors = params[:behaviors].values
+        @behaviors.each do |behavior_params|
+          @behavior = @student.behaviors.create(behavior_params)
+        end
+      }
+      format.html{
+        @behavior = @student.behaviors.create(behavior_params)
+        redirect_to @student
+      }
     end
-     # @behavior = @student.behaviors.create(behavior_params)
     
+    
+
+        
     # if @behavior.save
     #    flash[:success] = "Student behavior saved!"
     #    respond_to do |format|
@@ -24,6 +34,36 @@ class BehaviorsController < ApplicationController
     #    render 'static_pages/home'
     # end
     
+  end
+
+  def new_single_today
+    respond_to do |format|
+      format.js {
+        @student = Student.find_by(id: session[:this_student_id])
+        @behavior = Behavior.new
+        @today = Time.now
+      }
+    end
+  end
+
+  def new_whole_day
+    respond_to do |format|
+      format.js {
+        @student = Student.find_by(id: session[:this_student_id])
+        @behavior = Behavior.new
+        @today = Time.now
+      }
+    end
+  end
+
+  def new_single_choose
+    respond_to do |format|
+      format.js {
+        @student = Student.find_by(id: session[:this_student_id])
+        @behavior = Behavior.new
+        @today = Time.now
+      }
+    end
   end
 
   def destroy
