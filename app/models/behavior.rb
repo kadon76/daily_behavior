@@ -1,6 +1,7 @@
 class Behavior < ActiveRecord::Base
 	belongs_to :student
-	#validates :student_id, presence: true
+	default_scope -> { order('record_time DESC') }
+	validates :student_id, presence: true
 
 	
 end

@@ -11,7 +11,8 @@ class StudentsController < ApplicationController
       		flash[:success] = "Student created!"
       		redirect_to root_url
     	else
-      		render 'static_pages/home'
+      		flash[:error] = "Student creation unsuccessful!"
+      		render 'new'
     	end
 	end
 

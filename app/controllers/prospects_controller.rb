@@ -1,4 +1,6 @@
 class ProspectsController < ApplicationController
+  before_action :signed_in_user,  only: :index
+  before_action :admin_user,      only: :index
   def new
   	@prospect = Prospect.new
   end
@@ -15,10 +17,18 @@ class ProspectsController < ApplicationController
   	end
   end
 
+  def index
+    @prospects = Prospect.paginate(page: params[:page])
+  end
+
 private
 
   	def prospect_params
   		params.require(:prospect).permit(:name, :email)
   	end
+
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
+    end
 
 end

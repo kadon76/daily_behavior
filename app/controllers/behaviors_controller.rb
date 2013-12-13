@@ -1,4 +1,6 @@
 class BehaviorsController < ApplicationController
+  before_action :signed_in_user
+
   def new
     @student = Student.find_by(id: session[:this_student_id])
   	@behavior = Behavior.new

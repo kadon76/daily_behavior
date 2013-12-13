@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-  before_action :signed_in_user, only: [:index, :edit, :update]
+  before_action :signed_in_user
   before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  before_action :admin_user,     only: [:destroy, :new, :create]
   
   def index
     @users = User.paginate(page: params[:page])

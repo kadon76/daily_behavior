@@ -147,7 +147,7 @@
 <div class="control-group">
 	<%= f.label :record_time, "Behavior Record Time", :class => "control-label" %>
 	<div class="controls">
-		<%= f.time_select :record_time, { ampm: true, default: @behavior.record_time }%>
+		<%= f.time_select :record_time, { ampm: true, default: @today }%>
 	</div>
 </div>
 

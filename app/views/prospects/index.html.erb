@@ -1,0 +1,16 @@
+<% provide(:title, 'All prospects') %>
+<h1>All Prospects</h1>
+<div class="row">
+	<div class="span2"></div>
+	<div class="span10 offset1">
+		
+
+		<%= will_paginate %>
+
+		<ul>
+			<%= render @prospects %>
+		</ul>
+
+		<%= will_paginate %>
+	</div>
+</div>
