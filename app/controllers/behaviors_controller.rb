@@ -5,6 +5,10 @@ class BehaviorsController < ApplicationController
     @student = Student.find_by(id: session[:this_student_id])
   	@behavior = Behavior.new
     @today = Time.now
+    @behavior.pos1 = 1
+    @behavior.pos2 = 1
+    @behavior.pos3 = 1
+    @behavior.pos4 = 1
   end
 
   def create
@@ -44,6 +48,10 @@ class BehaviorsController < ApplicationController
         @student = Student.find_by(id: session[:this_student_id])
         @behavior = Behavior.new
         @today = Time.now
+        @behavior.pos1 = 1
+        @behavior.pos2 = 1
+        @behavior.pos3 = 1
+        @behavior.pos4 = 1
       }
     end
   end
@@ -64,6 +72,10 @@ class BehaviorsController < ApplicationController
         @student = Student.find_by(id: session[:this_student_id])
         @behavior = Behavior.new
         @today = Time.now
+        @behavior.pos1 = 1
+        @behavior.pos2 = 1
+        @behavior.pos3 = 1
+        @behavior.pos4 = 1
       }
     end
   end
