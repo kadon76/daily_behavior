@@ -1,0 +1,109 @@
+<%= render 'shared/error_messages', object: f.object %>
+
+	<div class="row">
+		<%= f.label :pos1, "On Task", :class => "checkbox inline"  %>
+		<%= f.check_box (:pos1)  %>
+	
+		<%= f.label "Positive Interactions", :class => "checkbox inline" %>
+		<%= f.check_box(:pos2)  %>
+		
+		<%= f.label :pos3, "Safety", :class => "checkbox inline" %>
+		<%= f.check_box(:pos3)  %>
+		
+		<%= f.label :pos4, "B.I.P. Goal", :class => "checkbox inline" %>
+		<%= f.check_box(:pos4)  %>
+	</div>	
+
+	<div class="row">
+		<%= f.label :neg1, "Defiant", :class => "checkbox inline" %>
+		
+			<%= f.check_box(:neg1)  %>
+	
+		<%= f.label :neg2, "Disrespectful", :class => "checkbox inline" %>
+		
+			<%= f.check_box(:neg2)  %>
+	
+		<%= f.label :neg3, "Disruptive", :class => "checkbox inline" %>
+		
+			<%= f.check_box(:neg3)  %>
+	
+		<%= f.label :neg4, "Property Distruction", :class => "checkbox inline" %>
+	
+			<%= f.check_box(:neg4)  %>
+	</div>
+	<div class="row">
+		<%= f.label :neg5, "Threatening", :class => "checkbox inline" %>
+		
+			<%= f.check_box(:neg5)  %>
+	
+		<%= f.label :neg6, "Obsenity", :class => "checkbox inline" %>
+	
+			<%= f.check_box(:neg6)  %>
+	
+		<%= f.label :neg7, "Physical Aggression", :class => "checkbox inline" %>
+	
+			<%= f.check_box(:neg7)  %>
+	
+		<%= f.label :neg8, "Verbal Aggression", :class => "checkbox inline" %>
+	
+			<%= f.check_box(:neg8)  %>
+	</div>
+	<div class="row">
+		<%= f.label :neg9, "AWOL", :class => "checkbox inline" %>
+		
+			<%= f.check_box(:neg9)  %>
+		
+		<%= f.label :neg10, "Sleeping", :class => "checkbox inline" %>
+	
+			<%= f.check_box(:neg10)  %>
+	
+		<%= f.label :neg11, "Provoking/Mocking", :class => "checkbox inline" %>
+		
+			<%= f.check_box(:neg11)  %>
+	
+		<%= f.label :neg12, "Self-Injurious", :class => "checkbox inline" %>
+	
+			<%= f.check_box(:neg12)  %>
+	</div>
+	<div class="row">
+		<%= f.label :neg13, "Repeat Offense", :class => "checkbox inline" %>
+		
+			<%= f.check_box(:neg13)  %>
+	
+		<%= f.label :neg14, "B.I.P. Goal", :class => "checkbox inline" %>
+	
+			<%= f.check_box(:neg14)  %>
+	
+		<%= f.label :neg15, "Tardy", :class => "checkbox inline" %>
+		
+			<%= f.check_box(:neg15)  %>
+	
+		<%= f.label :neg16, "Other", :class => "checkbox inline" %>
+		
+			<%= f.check_box(:neg16)  %>
+	</div>
+	<div class="row">
+		<%= f.label :cor1, "Time Away", :class => "checkbox inline" %>
+		
+			<%= f.check_box(:cor1)  %>
+	
+		<%= f.label :cor2, "Time Out", :class => "checkbox inline" %>
+		
+			<%= f.check_box(:cor2)  %>
+	
+		<%= f.label :cor3, "Seclusion", :class => "checkbox inline" %>
+		
+			<%= f.check_box(:cor3)  %>
+	
+		<%= f.label :cor4, "Restraint", :class => "checkbox inline" %>
+	
+			<%= f.check_box(:cor4)  %>
+	</div>
+	<div class="row">
+	<div class="control-group">
+		<%= f.label :record_time, "Behavior Record Time", :class => "control-label" %>
+		<div class="controls">
+			<%= f.time_select :record_time, { ampm: true, default: @today }%>
+		</div>
+	</div>
+	</div>

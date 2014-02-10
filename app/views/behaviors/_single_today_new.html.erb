@@ -1,8 +1,8 @@
 
 <div class="row">
-	<div class="span6 offset3">
-		<%= form_for(@behavior, html: {class: "form-horizontal", role: "form"}) do |f| %>
-			<%= render 'today_fields', f: f %>
+	<div class="span12">
+		<%= form_for(@behavior, html: {class: "form", role: "form"}) do |f| %>
+			<%= render 'today_checkboxes', f: f %>
 			<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
 		<% end %>
 	</div>
